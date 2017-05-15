@@ -38,7 +38,7 @@ public class LandingActivity extends AppCompatActivity
     RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
     recyclerView.addItemDecoration(itemDecoration);
 
-    adapter = new ContactAdapter(stubbedValues());
+    adapter = new ContactAdapter(stubbedValues(), this);
     recyclerView.setAdapter(adapter);
   }
   private List<Contact> stubbedValues()

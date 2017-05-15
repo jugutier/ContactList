@@ -19,7 +19,7 @@ public class Contact
 
   public String getImage_url()
   {
-    return "http://example.com/john";
+    return "http://3.cdn.nhle.com/canucks/v2/photos/mugs/8471266.jpg";
   }
 
   public String getPosition()
