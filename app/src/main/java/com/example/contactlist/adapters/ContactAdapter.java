@@ -9,10 +9,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.contactlist.R;
+import com.example.contactlist.model.Contact;
 
 @SuppressWarnings("WeakerAccess")
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHolder> {
-  private List<String> values;
+  private List<Contact> values;
 
   public class ViewHolder extends RecyclerView.ViewHolder {
     private TextView firstLine;
@@ -27,8 +28,8 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
     }
   }
 
-  public void add(int position, String item) {
-    values.add(position, item);
+  public void add(int position, Contact contact) {
+    values.add(position, contact);
     notifyItemInserted(position);
   }
 
@@ -37,7 +38,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
     notifyItemRemoved(position);
   }
 
-  public ContactAdapter(List<String> dataSource) {
+  public ContactAdapter(List<Contact> dataSource) {
     values = dataSource;
   }
 
@@ -48,14 +49,13 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
         parent.getContext());
     View v =
         inflater.inflate(R.layout.row_layout, parent, false);
-    ViewHolder vh = new ViewHolder(v);
-    return vh;
+    return new ViewHolder(v);
   }
 
   @Override
   public void onBindViewHolder(ViewHolder holder, final int position) {
-    final String name = values.get(position);
-    holder.firstLine.setText(name);
+    final Contact contact = values.get(position);
+    holder.firstLine.setText(contact.getName());
     holder.firstLine.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -63,7 +63,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
       }
     });
 
-    holder.secondLine.setText("Footer: " + name);
+    holder.secondLine.setText(contact.getPosition());
   }
 
   @Override
