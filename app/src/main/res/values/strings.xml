@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Contact List</string>
     <string name="action_settings">Settings</string>
+    <string name="contact_row_image">Contact Profile Image</string>
+    <string name="contact_row_name">Full name</string>
+    <string name="contact_row_description">Description</string>
 </resources>
