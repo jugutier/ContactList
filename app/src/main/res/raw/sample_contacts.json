@@ -1,0 +1,74 @@
+{
+  "roster": [
+    {
+      "name": "David Booth",
+      "image_url": "http://3.cdn.nhle.com/canucks/v2/photos/mugs/8471266.jpg",
+      "position": "Left Wing"
+    },
+    {
+      "name": "Alex Burrows",
+      "image_url": "http://1.cdn.nhle.com/canucks/v2/photos/mugs/8470358.jpg",
+      "position": "Right Wing"
+    },
+    {
+      "name": "Jannik Hansen",
+      "image_url": "http://2.cdn.nhle.com/canucks/v2/photos/mugs/8471498.jpg",
+      "position": "Right Wing"
+    },
+    {
+      "name": "Chris Higgins",
+      "image_url": "http://1.cdn.nhle.com/canucks/v2/photos/mugs/8470274.jpg",
+      "position": "Left Wing"
+    },
+    {
+      "name": "Ryan Kesler",
+      "image_url": "http://2.cdn.nhle.com/canucks/v2/photos/mugs/8470616.jpg",
+      "position": "Center"
+    },
+    {
+      "name": "Daniel Sedin",
+      "image_url": "http://2.cdn.nhle.com/canucks/v2/photos/mugs/8467875.jpg",
+      "position": "Left Wing"
+    },
+    {
+      "name": "Henrik Sedin",
+      "image_url": "http://3.cdn.nhle.com/canucks/v2/photos/mugs/8467876.jpg",
+      "position": "Center"
+    },
+    {
+      "name": "Kevin Bieksa",
+      "image_url": "http://3.cdn.nhle.com/canucks/v2/photos/mugs/8469598.jpg",
+      "position": "Defenseman"
+    },
+    {
+      "name": "Alex Edler",
+      "image_url": "http://1.cdn.nhle.com/canucks/v2/photos/mugs/8471303.jpg",
+      "position": "Defenseman"
+    },
+    {
+      "name": "Jason Garrison",
+      "image_url": "http://3.cdn.nhle.com/photos/mugs/8474520.jpg",
+      "position": "Defenseman"
+    },
+    {
+      "name": "Dan Hamhuis",
+      "image_url": "http://2.cdn.nhle.com/canucks/v2/photos/mugs/8469465.jpg",
+      "position": "Defenseman"
+    },
+    {
+      "name": "Chris Tanev",
+      "image_url": "http://3.cdn.nhle.com/canucks/v2/photos/mugs/8475690.jpg",
+      "position": "Defenseman"
+    },
+    {
+      "name": "Eddie Lack",
+      "image_url": "http://3.cdn.nhle.com/canucks/v2/photos/mugs/8475663.jpg",
+      "position": "Goalie"
+    },
+    {
+      "name": "Jacob Markstrom",
+      "image_url": "http://1.cdn.nhle.com/photos/mugs/8474593.jpg",
+      "position": "Goalie"
+    }
+  ]
+}

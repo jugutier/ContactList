@@ -12,6 +12,7 @@ import android.view.MenuItem;
 
 import com.example.contactlist.adapters.ContactAdapter;
 import com.example.contactlist.model.Contact;
+import com.example.contactlist.network.api.ContactRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,14 +42,12 @@ public class LandingActivity extends AppCompatActivity
     adapter = new ContactAdapter(stubbedValues(), this);
     recyclerView.setAdapter(adapter);
   }
+
   private List<Contact> stubbedValues()
   {
-    List<Contact> values = new ArrayList<Contact>();
-    for (int i = 0; i < 40; i++) {
-      values.add(new Contact());
-    }
-    return values;
+    return ContactRepository.getAllContacts(this);
   }
+
   @Override
   public boolean onCreateOptionsMenu(Menu menu)
   {

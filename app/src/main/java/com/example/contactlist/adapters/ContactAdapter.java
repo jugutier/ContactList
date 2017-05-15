@@ -60,13 +60,13 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
   }
 
   @Override
-  public void onBindViewHolder(ViewHolder holder, final int position) {
+  public void onBindViewHolder(ViewHolder holder, int position) {
     final Contact contact = values.get(position);
     holder.firstLine.setText(contact.getName());
     holder.firstLine.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        remove(position);
+        // TODO: Switch to another view.
       }
     });
 

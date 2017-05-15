@@ -14,16 +14,26 @@ public class Contact
 
   public String getName()
   {
-    return "John Doe No." + (Math.random() * 100);
+    return name;
   }
 
   public String getImage_url()
   {
-    return "http://3.cdn.nhle.com/canucks/v2/photos/mugs/8471266.jpg";
+    return image_url;
   }
 
   public String getPosition()
   {
-    return "N/A";
+    return position;
+  }
+
+  @Override
+  public String toString()
+  {
+    return "Contact{" +
+        "name='" + name + '\'' +
+        ", image_url='" + image_url + '\'' +
+        ", position='" + position + '\'' +
+        '}';
   }
 }
