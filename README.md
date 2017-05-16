@@ -1,6 +1,8 @@
 # ContactList
 A Simple Android Contact List that simulates interaction with an API.
 
+![alt text](https://raw.githubusercontent.com/jugutier/contactlist/master/screenshots/1.png)
+![alt text](https://raw.githubusercontent.com/jugutier/contactlist/master/screenshots/2.png)
 ## Key Features
 
 	1.	Displays sample data coming from a local JSON File
