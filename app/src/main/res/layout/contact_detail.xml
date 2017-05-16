@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+    android:orientation="vertical"
+              android:weightSum="2"
+              android:layout_weight="2">
+
+    <LinearLayout
+        android:layout_height="0dp"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:layout_weight=".50"
+        >
+        <ImageView
+            android:id="@+id/contactImage"
+            android:layout_width="@dimen/contact_detail_image_width"
+            android:layout_height="fill_parent"
+            android:layout_marginEnd="6dip"
+            android:contentDescription="@string/contact_row_image"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/firstLine"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@string/contact_row_name"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/secondLine"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="@string/contact_row_description"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

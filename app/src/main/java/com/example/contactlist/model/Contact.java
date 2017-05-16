@@ -3,6 +3,7 @@ package com.example.contactlist.model;
 
 public class Contact
 {
+  public static final transient String KEY = "Contact";
   private String name;
   private String image_url;
   private String position;

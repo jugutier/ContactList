@@ -3,6 +3,8 @@ package com.example.contactlist.adapters;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.contactlist.DetailActivity;
 import com.example.contactlist.R;
 import com.example.contactlist.model.Contact;
 import com.example.contactlist.network.images.NetworkImage;
@@ -60,12 +63,15 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
   }
 
   @Override
-  public void onBindViewHolder(ViewHolder holder, int position) {
+  public void onBindViewHolder(ViewHolder holder, final int position) {
     final Contact contact = values.get(position);
     holder.firstLine.setText(contact.getName());
     holder.firstLine.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
+        final Intent intent = new Intent(context , DetailActivity.class);
+        intent.putExtra(Contact.KEY, String.valueOf(position));
+        context.startActivity(intent);
         // TODO: Switch to another view.
       }
     });

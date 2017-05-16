@@ -26,7 +26,6 @@ public class ContactRepository
     Roster roster = gson.fromJson(getRawReader(activity), Roster.class);
 
     List<Contact> contacts = roster.getContacts();
-      System.out.println(roster);
     return contacts;
 
   }
