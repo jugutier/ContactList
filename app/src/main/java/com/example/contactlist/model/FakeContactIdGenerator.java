@@ -16,13 +16,10 @@ public class FakeContactIdGenerator
     currentId = new AtomicInteger(0);
   }
 
-  public static FakeContactIdGenerator getInstance(){
-    if(instance == null)
-    {
-      synchronized (FakeContactIdGenerator.class)
-      {
-        if(instance == null)
-        {
+  public static FakeContactIdGenerator getInstance() {
+    if(instance == null) {
+      synchronized (FakeContactIdGenerator.class) {
+        if(instance == null) {
           instance = new FakeContactIdGenerator();
         }
       }
