@@ -3,14 +3,12 @@ package com.example.contactlist;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.contactlist.model.Contact;
-import com.example.contactlist.network.api.ContactRepository;
 import com.example.contactlist.network.images.NetworkImage;
 
 public class DetailActivity extends AppCompatActivity {
@@ -22,8 +20,11 @@ public class DetailActivity extends AppCompatActivity {
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
     String contactId = getIntent().getStringExtra(Contact.KEY);
-    Contact contact = new ContactRepository(this).getContactById(contactId);
-    Log.d("DetailActivity", "Retrieved contact id is = " + contact);
+    populateContactWithId(contactId);
+  }
+
+  private void populateContactWithId(String contactId) {
+    Contact contact = LandingActivity.getContactRepository().getContactById(contactId);
 
     TextView line1 = (TextView) findViewById(R.id.firstLine);
     line1.setText(contact.getName());
@@ -32,9 +33,7 @@ public class DetailActivity extends AppCompatActivity {
 
     ImageView imageView = (ImageView) findViewById(R.id.contactImage);
     new NetworkImage(this).getImageAsync(contact.getImage_url(), imageView);
-
   }
-
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {

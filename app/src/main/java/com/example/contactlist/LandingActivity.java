@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import com.example.contactlist.adapters.ContactAdapter;
 import com.example.contactlist.model.Contact;
 import com.example.contactlist.network.api.ContactRepository;
+import com.example.contactlist.network.api.Datasource;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ public class LandingActivity extends AppCompatActivity {
   private RecyclerView recyclerView;
   private ContactAdapter adapter;
   private RecyclerView.LayoutManager layoutManager;
-  private ContactRepository repository;
+  private static ContactRepository repository;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class LandingActivity extends AppCompatActivity {
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    repository = new ContactRepository(this);
+    repository = new ContactRepository(new Datasource(this));
     recyclerView = (RecyclerView) findViewById(R.id.contacts_recycler_view);
     recyclerView.setHasFixedSize(true);
     layoutManager = new LinearLayoutManager(this);
@@ -45,6 +46,10 @@ public class LandingActivity extends AppCompatActivity {
 
   private List<Contact> stubbedValues() {
     return repository.getAllContacts();
+  }
+
+  public static ContactRepository getContactRepository() {
+    return repository;
   }
 
   @Override
