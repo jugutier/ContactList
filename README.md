@@ -3,6 +3,14 @@ A Simple Android Contact List that simulates interaction with an API.
 
 ![alt text](https://raw.githubusercontent.com/jugutier/contactlist/master/screenshots/1.png)
 ![alt text](https://raw.githubusercontent.com/jugutier/contactlist/master/screenshots/2.png)
+
+## Install instructions
+Clone this repository. Open Andrdroid Studio 2.3.1+, import as existing android project and deploy to your device/simulator. 
+
+Via command line `./gradlew assembleDebug` and then `adb push <your_device>`
+
+Android tools 25 is a requirement for this project.
+
 ## Key Features
 
 	1.	Displays sample data coming from a local JSON File
