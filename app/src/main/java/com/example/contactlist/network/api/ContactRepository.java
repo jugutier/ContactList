@@ -22,7 +22,7 @@ public class ContactRepository
 
   public static List<Contact> getAllContacts(Activity activity)
   {
-      Gson gson = new GsonBuilder().create();
+    Gson gson = new GsonBuilder().create();
     Roster roster = gson.fromJson(getRawReader(activity), Roster.class);
 
     List<Contact> contacts = roster.getContacts();

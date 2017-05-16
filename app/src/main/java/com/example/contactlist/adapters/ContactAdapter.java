@@ -2,6 +2,7 @@ package com.example.contactlist.adapters;
 
 import java.util.List;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,10 +18,11 @@ import com.example.contactlist.R;
 import com.example.contactlist.model.Contact;
 import com.example.contactlist.network.images.NetworkImage;
 
-@SuppressWarnings("WeakerAccess")
+@SuppressWarnings({"WeakerAccess" , "unused"})
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHolder> {
   private List<Contact> values;
   private Context context;
+  private NetworkImage networkImage;
 
   public class ViewHolder extends RecyclerView.ViewHolder {
     private TextView firstLine;
@@ -50,6 +52,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
   public ContactAdapter(List<Contact> dataSource, Context ctx) {
     values = dataSource;
     context = ctx;
+    networkImage = new NetworkImage(context);
   }
 
   @Override
@@ -72,13 +75,13 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
         final Intent intent = new Intent(context , DetailActivity.class);
         intent.putExtra(Contact.KEY, String.valueOf(position));
         context.startActivity(intent);
-        // TODO: Switch to another view.
+        ((Activity) context).overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
       }
     });
 
     holder.secondLine.setText(contact.getPosition());
 
-    NetworkImage.getImage(context, contact.getImage_url() , holder.contactImage);
+    networkImage.getImageAsync(contact.getImage_url() , holder.contactImage);
 
   }
 
