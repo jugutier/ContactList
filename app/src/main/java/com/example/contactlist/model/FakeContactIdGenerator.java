@@ -17,9 +17,9 @@ public class FakeContactIdGenerator
   }
 
   public static FakeContactIdGenerator getInstance() {
-    if(instance == null) {
+    if(null == instance) {
       synchronized (FakeContactIdGenerator.class) {
-        if(instance == null) {
+        if(null == instance) {
           instance = new FakeContactIdGenerator();
         }
       }
