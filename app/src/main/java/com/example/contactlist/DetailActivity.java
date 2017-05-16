@@ -6,8 +6,12 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.contactlist.model.Contact;
+import com.example.contactlist.network.api.ContactRepository;
+import com.example.contactlist.network.images.NetworkImage;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -17,8 +21,17 @@ public class DetailActivity extends AppCompatActivity {
     setContentView(R.layout.contact_detail);
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
-    int contactId = Integer.valueOf(getIntent().getStringExtra(Contact.KEY));
-    Log.d("DetailActivity", "Retrieved contact id is = " + contactId);
+    String contactId = getIntent().getStringExtra(Contact.KEY);
+    Contact contact = new ContactRepository(this).getContactById(contactId);
+    Log.d("DetailActivity", "Retrieved contact id is = " + contact);
+
+    TextView line1 = (TextView) findViewById(R.id.firstLine);
+    line1.setText(contact.getName());
+    TextView line2 = (TextView) findViewById(R.id.secondLine);
+    line2.setText(contact.getPosition());
+
+    ImageView imageView = (ImageView) findViewById(R.id.contactImage);
+    new NetworkImage(this).getImageAsync(contact.getImage_url(), imageView);
 
   }
 

@@ -4,8 +4,7 @@ package com.example.contactlist.model;
  * Models a Contact from our contact list.
  */
 @SuppressWarnings({"unused"})
-public class Contact
-{
+public class Contact {
   public static final transient String KEY = "Contact";
   private String id;
   private String name;
@@ -16,7 +15,7 @@ public class Contact
     id = String.valueOf(FakeContactIdGenerator.getInstance().generateId());
   }
 
-  public String getId(){
+  public String getId() {
     return id;
   }
 
@@ -36,8 +35,7 @@ public class Contact
   }
 
   @Override
-  public String toString()
-  {
+  public String toString() {
     return "Contact{" +
         "id= '" + id + '\'' +
         ", name='" + name + '\'' +
