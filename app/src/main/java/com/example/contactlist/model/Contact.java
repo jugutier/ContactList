@@ -1,16 +1,23 @@
 package com.example.contactlist.model;
 
-
+/**
+ * Models a Contact from our contact list.
+ */
+@SuppressWarnings({"unused"})
 public class Contact
 {
   public static final transient String KEY = "Contact";
+  private String id;
   private String name;
   private String image_url;
   private String position;
 
-  public Contact()
-  {
+  public Contact() {
+    id = String.valueOf(FakeContactIdGenerator.getInstance().generateId());
+  }
 
+  public String getId(){
+    return id;
   }
 
   public String getName()
@@ -32,7 +39,8 @@ public class Contact
   public String toString()
   {
     return "Contact{" +
-        "name='" + name + '\'' +
+        "id= '" + id + '\'' +
+        ", name='" + name + '\'' +
         ", image_url='" + image_url + '\'' +
         ", position='" + position + '\'' +
         '}';

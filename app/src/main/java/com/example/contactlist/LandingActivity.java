@@ -17,20 +17,20 @@ import com.example.contactlist.network.api.ContactRepository;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LandingActivity extends AppCompatActivity
-{
+public class LandingActivity extends AppCompatActivity {
   private RecyclerView recyclerView;
   private ContactAdapter adapter;
   private RecyclerView.LayoutManager layoutManager;
+  private ContactRepository repository;
 
   @Override
-  protected void onCreate(Bundle savedInstanceState)
-  {
+  protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_landing);
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
+    repository = new ContactRepository(this);
     recyclerView = (RecyclerView) findViewById(R.id.contacts_recycler_view);
     recyclerView.setHasFixedSize(true);
     layoutManager = new LinearLayoutManager(this);
@@ -43,21 +43,18 @@ public class LandingActivity extends AppCompatActivity
     recyclerView.setAdapter(adapter);
   }
 
-  private List<Contact> stubbedValues()
-  {
-    return ContactRepository.getAllContacts(this);
+  private List<Contact> stubbedValues() {
+    return repository.getAllContacts();
   }
 
   @Override
-  public boolean onCreateOptionsMenu(Menu menu)
-  {
+  public boolean onCreateOptionsMenu(Menu menu) {
     getMenuInflater().inflate(R.menu.menu_landing, menu);
     return true;
   }
 
   @Override
-  public boolean onOptionsItemSelected(MenuItem item)
-  {
+  public boolean onOptionsItemSelected(MenuItem item) {
     int id = item.getItemId();
     return (id == R.id.action_settings) || super.onOptionsItemSelected(item);
   }

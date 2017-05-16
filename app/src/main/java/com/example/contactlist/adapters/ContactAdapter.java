@@ -66,14 +66,14 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
   }
 
   @Override
-  public void onBindViewHolder(ViewHolder holder, final int position) {
+  public void onBindViewHolder(ViewHolder holder, int position) {
     final Contact contact = values.get(position);
     holder.firstLine.setText(contact.getName());
     holder.firstLine.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         final Intent intent = new Intent(context , DetailActivity.class);
-        intent.putExtra(Contact.KEY, String.valueOf(position));
+        intent.putExtra(Contact.KEY, contact.getId());
         context.startActivity(intent);
         ((Activity) context).overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
       }
